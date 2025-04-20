@@ -88,3 +88,29 @@ class Workouts:
 
         return f'Here is your workout plan for the next week!' #UPDATE WITH THE REST OF THE CODE ONCE FUNCTIONS ARE BETTER UPDATED
         pass
+
+class Workout_Info():
+    """ This has the + information for every part of the workout"""
+    def __init__(self,difficulty):
+        self.difficulty = difficulty
+        pass
+    def arms(self,difficulty):
+        """ using regaler expression to find the arms part of the database and returning the information to the workout script """
+        pass
+    def legs(self, difficulty):
+        """ using regular expression to find the leg part of the database and returning the information to the workout script """
+        pass
+    def glutes(self, difficulty):
+        """ using regular expression to find the glutes part of the database and returning the information to the workout script """
+        pass
+    def back(self,difficulty):
+        """ using regular expression to find the back part of the database and returning the information to the workout script"""
+        pass
+    def abs(self,difficulty):
+        """ using regular expression to find the abs part of the database and returning the information to the workout script"""
+        pass
+    def balanced(self,difficulty):
+        """ using regular expression to find the balanced part of the database and return the information to the workout script"""
+        pass
+
+    pass
