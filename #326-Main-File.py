@@ -133,10 +133,10 @@ class Workout_Info():
 
 
 
-     #If the user were to want arms at an intermediate level then it must retunr the right information (regualr expressions)
+     # If the user were to want arms at an intermediate level then it must retunr the right information (regualr expressions)
  
      # The workout schedule must have certain days as breaks depending on how many days they want to workout
 
      # The workout schedule must have certain days as breaks depending on how many days they want to workout
  
-     #For example, if they want to workout for four days, there must be a break on Wednesday and Saturday
+     # For example, if they want to workout for four days, there must be a break on Wednesday and Saturday
