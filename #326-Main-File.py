@@ -97,10 +97,14 @@ class Workouts:
 
 
 
+
+
+
+
     def main():
         print("Welcome to your personalized workout routine! Allow ud to help you by entering the following information.\n")
         difficulty = input("What would you say your workout level is at? (Beginner, Intermediate, Advacned)")
-        days = input("How many dyas a weel would you prefer to workout? Maximum of 5.")
+        days = input("How many dyas a week would you prefer to workout? Maximum of 5.")
         focus = input("Are there any areas youd like to focus on? \nWe have specificatins for Arms, Legs, Back, Glutes &Abs.\nIf you have no specifications type 'Balanced' ")
 
         workout = Workouts(focus, days, difficulty)
@@ -117,7 +121,7 @@ class Workouts:
 
     #If the user were to want arms at an intermediate level then it must retunr the right information (regualr expressions)
 
-    # The workout schedule must have certaindays as breaks depending on how many days they want to workout
+    # The workout schedule must have certain days as breaks depending on how many days they want to workout
 
     #For example, if they want to workout for four days, there must be a break on Wednesday and Saturday
 
