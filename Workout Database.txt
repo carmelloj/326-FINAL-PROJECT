@@ -1,6 +1,4 @@
-Workout Database
-
-Workout Database
+Workout_Database
 
 Warm-Ups:
 
