@@ -84,34 +84,41 @@ class Workouts: #Carmello
 class Workout_Info(): #Zola
     """Has the information for every part of the workout. Uses the """
     def __init__(self, difficulty): 
-        self.difficulty = difficulty
-        pass
+        self.difficulty = difficulty.lower()
+        with open("Workout_Database.txt","r") as f:
+            self.data = f.read()
 
-    def arms(self, difficulty):
+    def arms(self):
         """Using regular expression to find the arms part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("arms")
 
-    def legs(self, difficulty):
+    def legs(self):
         """Using regular expression to find the legs part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("legs")
 
-    def glutes(self, difficulty):
+    def glutes(self):
         """Using regular expression to find the glutes part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("glutes")
 
-    def back(self, difficulty):
+    def back(self):
         """Using regular expression to find the back part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("back")
 
-    def abs(self, difficulty):
+    def abs(self):
         """Using regular expression to find the abs part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("abs")
 
-    def balanced(self, difficulty):
+    def balanced(self):
         """Using regular expression to find the balanced part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("balanced")
+    
+    def get_workout_data(self,focus_area):
+        #this code assumes that all data is correctly input based on the instructions given in the terminal
+        pattern = rf"#\s*{focus_area}\s*{self.difficulty}\n(.*?)(?=\n#|\Z)"
+        match = re.search(pattern,self.data,re.DOTALL|re.IGNORECASE)
+        return match.group(1).strip().split('\n')
 
-    pass
+
 
 def main(): #Edom
     print("Welcome to your personalized workout routine! Allow us to help you by entering the following infomration.\n")
