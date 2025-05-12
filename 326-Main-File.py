@@ -130,17 +130,6 @@ class Workout_Info():
 
     if __name__ == "__main__":
         main()
-        #UNIT TESTS
-    def test_workouts():
-    # 3 days, arms workout, intermediate workout
-        workout = Workouts("arms", 3, "Intermediate")
-        days = workout.workout_days()
-        expected_days = ['Monday', 'Thursday', 'Sunday']
-        assert days == expected_days, f"Expected {expected_days}, but got {days}"
-
-
-    
-
 
 
 

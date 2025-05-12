@@ -66,6 +66,48 @@ Workout_Database
 3x20 Glute Bridges
 3x20 Donkey Kicks
 
+#back beginner 
+3x10 superman
+3x10 single-arm dumbbell 
+3x10 chin-ups
+3x10 reverse-grip
+3x10 lat pull-ups
 
+
+#back intermediate 
+3x15 superman
+3x15 single-arm dumbbell 
+3x15 chin-ups
+3x15 reverse-grip
+3x15 lat pull-ups
+
+
+#back advanced 
+3x20 superman
+3x20 single-arm dumbbell 
+3x20 chin-ups
+3x20 reverse-grip
+3x20 lat pull-ups
+
+#abs beginner 
+3x10 sit-ups
+3x10 planks
+3x10 crunches
+3x10 toe touches
+3x10 scissor kicks
+
+#abs intermediate 
+3x15 sit-ups
+3x15 planks
+3x15 crunches
+3x15 toe touches
+3x15 scissor kicks
+
+#abs advanced 
+3x20 sit-ups
+3x20 planks
+3x20 crunches
+3x20 toe touches
+3x20 scissor kicks
 
 
