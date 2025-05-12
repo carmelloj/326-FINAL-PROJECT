@@ -53,6 +53,8 @@ class Workouts: #Carmello
         intervals = len(self.days_of_week) // self.days
         final_days = [self.days_of_week[i * intervals] for i in range(self.days)] #evenly spaces out the workout days throughout the week
         return final_days
+    
+    
 
     def workout_difficulty(self): #Carmello
         """Gets the workout difficulty from the user and passes it to adding_workout function
@@ -130,17 +132,16 @@ def main(): #Edom
     workout.workout_difficulty()
     workout.print_workout_schedule()
 
-if __name__ == "__main__": #Edom
+if __name__ == "__main__": 
     main()
 
+ #Unit Tests 
+def test_workouts():
+ # 3 days, arms workout, and intermediate workout
+    workout = Workouts("arms", 3, "Intermediate")
+    days = workout.workout_days()
+    expected_days = ['Monday', 'Thursday', 'Sunday']
+    assert days == expected_days, f"Expected{expected_days}, but got {days}"
 
-#UNIT TESTS
 
-#The unit tests will make sure that each focus area prints out appropriately for each difficulty.
-
-#If the user wants arms at an intermediate level then it must return the right information (Regular expressions)
-
-# The workout schedule must have certain days as breaks depending on how many days they want to workout.
-
-# E.g. If they want to work out for four days, there must be a break on Wednesday and Saturday.
 
