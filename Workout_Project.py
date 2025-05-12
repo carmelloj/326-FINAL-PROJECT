@@ -53,6 +53,8 @@ class Workouts: #Carmello
         intervals = len(self.days_of_week) // self.days
         final_days = [self.days_of_week[i * intervals] for i in range(self.days)] #evenly spaces out the workout days throughout the week
         return final_days
+    
+    
 
     def workout_difficulty(self): #Carmello
         """Gets the workout difficulty from the user and passes it to adding_workout function
