@@ -125,6 +125,13 @@ def main(): #Edom
     workout.workout_difficulty()
     workout.print_workout_schedule()
 
+    #lidia 
+
+    workout_4 = Workouts("arms",4,"Intermediate")
+    days_4 = workout_4.workout_days()
+    expected_4 =  ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+    assert days_4 == expected_4,f"4-day workout: expected{expected_4},got{days_4}"
+
 if __name__ == "__main__": 
     main()
 
