@@ -2,44 +2,72 @@ Workout Database
 
 Workout Database
 
-Warm-Ups:
+#legs beginner 
 
-Legs: Leg, press, calf raises, deadlifts, box jumps, reverse lunges. This will be on Monday.
+3x10 Leg Press 
+3x10 Calf raises
+3x10 Deadlifts 
+3x10 Box Jumps 
+3x10 Reverse Lunges
 
-Beginner- Each exercise they will do 3 reps of 10
+#Legs Intermediate
 
-Intermediate- Each exercise they will do 3 reps of 15
+3x15 Leg Press
+3x15 Calf raises
+3x15 Deadlifts 
+3x15 Box Jumps 
+3x15 Reverse Lunges 
 
-Advanced- Each exercise they will do 3 reps of 20
+#Legs advanced 
 
-Arms: bicep, hammer curls, pull-ups, diamond push-ups, dead-hangs. This will be on Tuesday
+3x20 Leg Press
+3x20 Calf raises
+3x20 Deadlifts 
+3x20 Box Jumps 
+3x20 Reverse Lunges 
 
-Beginner- Each exercise they will do 3 reps of 10
+#Arms beginner
+3x10 Bicep Curls
+3x10 Hammer Curls
+3x10 Pull-ups
+3x10 Diamond Push-ups
+3x10 Dead Hangs
 
-Intermediate- Each exercise they will do 3 reps of 15
+#Arms intermediate
+3x15 Bicep Curls
+3x15 Hammer Curls
+3x15 Pull-ups
+3x15 Diamond Push-ups
+3x15 Dead Hangs
 
-Advanced- Each exercise they will do 3 reps of 15
+#Arms advanced
+3x20 Bicep Curls
+3x20 Hammer Curls
+3x20 Pull-ups
+3x20 Diamond Push-ups
+3x20 Dead Hangs
 
-Glutes: squats, sumo squats, fire hydrants, glute bridges, donkey kicks. This will be on Wednesday.
+#glutes beginner
+3x10 Squats
+3x10 Sumo Squats
+3x10 Fire Hydrants
+3x10 Glute Bridges
+3x10 Donkey Kicks
 
-Beginner- Each exercise they will do 3 reps of 10 
+# glutes intermediate
+3x15 Squats
+3x15 Sumo Squats
+3x15 Fire Hydrants
+3x15 Glute Bridges
+3x15 Donkey Kicks
 
-Intermediate- Each exercise they will do 3 reps of 15
+# glutes advanced
+3x20 Squats
+3x20 Sumo Squats
+3x20 Fire Hydrants
+3x20 Glute Bridges
+3x20 Donkey Kicks
 
-Advanced- Each exercise they will do 3 reps of 20
 
-Back: Superman, single-arm dumbell, lat pull down, chin-ups, reverse-grip lat pull up. This will be on Thursday. 
 
-Beginner- Each exercise they will do 3 reps of 10
 
-Intermediate- Each exercise they will do 3 reps of 15 
-
-Advanced- Each exercise they will do 3 reps 20 
-
-Abs: sit-ups, planks, crunches, toe touches, scissor kicks. This will be done on Friday. 
-
-Beginner- Each exercise they 3 reps of 10 
-
-Intermediate- Each exercise they will do reps of 15 
-
-Advanced- Each Exercise they will do 3 reps of 20
