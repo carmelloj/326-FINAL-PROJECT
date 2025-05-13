@@ -43,6 +43,8 @@ class Workouts: #Carmello
             return self.info.back()
         elif self.focus == "abs":
             return self.info.abs()
+        elif self.focus == "WARM_UP":
+            return self.info.warm_up()
         else:
             return self.info.balanced()
 
@@ -65,6 +67,7 @@ class Workouts: #Carmello
         """Returns the workout schedule generated from the Workout class using f strings"""
         work_days = self.workout_days()
         work_plan = self.adding_workout()
+        warm_ups = self.info.warm_up()
 
         print(f'\nHere is your workout plan for the next {self.days} days: \n')
 
@@ -72,10 +75,14 @@ class Workouts: #Carmello
             print(f"{day}:")
             if day in work_days:
                 print(f"\nFocus: {self.focus.capitalize()}")
+                print("WARM-UP:")
+                for line in warm_ups:
+                    print(line)
+                print("\nMAIN WORKOUT:")
                 for i, line in enumerate(work_plan):
                     print(f"{line}")
-                    if i == 0:
-                        print("QUICK WATER BREAK (5 MINUTES)")
+                    if i % 2 == 0:
+                        print("QUICK WATER BREAK (2 MINUTES)")
                 print("FINISHED\n")
             else:
                 print("BREAK\n")
@@ -112,10 +119,16 @@ class Workout_Info(): #Zola
         """Using regular expression to find the balanced part of the database and returning the information to the workout script"""
         return self.get_workout_data("balanced")
     
+    def warm_up(self):
+        """Using regular expression to find the balanced part of the database and returning the information to the workout script"""
+        return self.get_workout_data("WARM-UP")
+    
     def get_workout_data(self,focus_area):
         #this code assumes that all data is correctly input based on the instructions given in the terminal
         pattern = rf"#\s*{focus_area}\s*{self.difficulty}\n(.*?)(?=\n#|\Z)"
-        match = re.search(pattern,self.data,re.DOTALL|re.IGNORECASE)
+        if focus_area == "WARM-UP":
+            pattern = rf"#WARM-UP\n(.*?)(?=\n#|\Z)"
+        match = re.search(pattern, self.data, re.DOTALL|re.IGNORECASE)
         return match.group(1).strip().split('\n')
 
 

@@ -1,44 +1,49 @@
 Workout_Database
 
-#legs beginner 
+#WARM-UP
+March in place (1 min)
+Arm circles (30 sec forward/backwards)
+Leg swings (30 sec each leg)
+Torso twists (30 sec)
+Shoulder shrugs and rolls (30 sec)
+Treadmill (5 min)
 
+#legs beginner 
 3x10 Leg Press 
 3x10 Calf raises
 3x10 Deadlifts 
 3x10 Box Jumps 
 3x10 Reverse Lunges
 
-#Legs Intermediate
-
+#legs intermediate
 3x15 Leg Press
 3x15 Calf raises
 3x15 Deadlifts 
 3x15 Box Jumps 
 3x15 Reverse Lunges 
 
-#Legs advanced 
-
+#legs advanced 
 3x20 Leg Press
 3x20 Calf raises
 3x20 Deadlifts 
 3x20 Box Jumps 
 3x20 Reverse Lunges 
 
-#Arms beginner
+#arms beginner
 3x10 Bicep Curls
 3x10 Hammer Curls
 3x10 Pull-ups
 3x10 Diamond Push-ups
 3x10 Dead Hangs
 
-#Arms intermediate
+#arms intermediate
 3x15 Bicep Curls
 3x15 Hammer Curls
 3x15 Pull-ups
 3x15 Diamond Push-ups
 3x15 Dead Hangs
 
-#Arms advanced
+#arms advanced
 3x20 Bicep Curls
 3x20 Hammer Curls
 3x20 Pull-ups
@@ -52,14 +57,14 @@ Workout_Database
 3x10 Glute Bridges
 3x10 Donkey Kicks
 
-# glutes intermediate
+#glutes intermediate
 3x15 Squats
 3x15 Sumo Squats
 3x15 Fire Hydrants
 3x15 Glute Bridges
 3x15 Donkey Kicks
 
-# glutes advanced
+#glutes advanced
 3x20 Squats
 3x20 Sumo Squats
 3x20 Fire Hydrants
@@ -110,4 +115,23 @@ Workout_Database
 3x20 toe touches
 3x20 scissor kicks
 
+#balanced beginner
+3x10 Squats
+3x10 Bicep Curls
+3x10 Deadlifts
+3x10 Superman
+3x10 Sit-ups
 
+#balanced intermediate
+3x15 Reverse Lunges
+3x15 Hammer Curls
+3x15 Glute Bridges
+3x15 Chin-ups
+3x15 Planks
+
+#balanced advanced
+3x20 Box Jumps
+3x20 Pull-ups
+3x20 Sumo Squats
+3x20 Reverse-grip Rows
+3x20 Scissor Kicks
