@@ -21,7 +21,7 @@ class Workouts: #Carmello
     """
     def __init__(self, focus, days, difficulty): #Carmello
         self.focus = focus.lower()
-        self.days = days
+        self.days = int(days)
         self.difficulty = difficulty.lower()
         self.days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         self.info = Workout_Info(difficulty)
@@ -125,7 +125,8 @@ class Workout_Info(): #Zola
     
     def get_workout_data(self,focus_area):
         #this code assumes that all data is correctly input based on the instructions given in the terminal
-        pattern = rf"#\s*{focus_area}\s*{self.difficulty}\n(.*?)(?=\n#|\Z)"
+        #print(self.data) <-- makes sure whole data is printing
+        pattern = rf"#\s*{focus_area.lower()}\s*{self.difficulty}\s*\n(.*?)(?=\n#|\Z)"
         if focus_area == "WARM-UP":
             pattern = rf"#WARM-UP\n(.*?)(?=\n#|\Z)"
         match = re.search(pattern, self.data, re.DOTALL|re.IGNORECASE)
@@ -155,13 +156,12 @@ def main(): #Edom
 if __name__ == "__main__": 
     main()
 
- #Unit Tests 
+
+#Unit Tests 
 def test_workouts():
  # 3 days, arms workout, and intermediate workout
     workout = Workouts("arms", 3, "Intermediate")
     days = workout.workout_days()
     expected_days = ['Monday', 'Thursday', 'Sunday']
     assert days == expected_days, f"Expected{expected_days}, but got {days}"
-
-
 
