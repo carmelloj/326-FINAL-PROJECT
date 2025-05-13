@@ -89,6 +89,11 @@ class Workout_Info(): #Zola
             self.data = f.read()
 
     def arms(self):
+        """Using regular expression to find the arms part of the database and returning the information to the workout script
+       
+        Returns: the workout data from the arms section
+        """
+
         """Using regular expression to find the arms part of the database and returning the information to the workout script"""
         return self.get_workout_data("arms")
 
@@ -113,6 +118,16 @@ class Workout_Info(): #Zola
         return self.get_workout_data("balanced")
     
     def get_workout_data(self,focus_area):
+        """Gets workout data based on the focus area that the user requested. Regular expressions are
+           used to extract the exact data from the Workout_Database file.
+
+        Args:
+        focus_area (str): the area the user requested to focus on
+
+        Returns:
+        The data from the Workout_Database file cirresponding with the requested focus area.
+        """
+
         #this code assumes that all data is correctly input based on the instructions given in the terminal
         pattern = rf"#\s*{focus_area}\s*{self.difficulty}\n(.*?)(?=\n#|\Z)"
         match = re.search(pattern,self.data,re.DOTALL|re.IGNORECASE)
@@ -121,6 +136,8 @@ class Workout_Info(): #Zola
 
 
 def main(): #Edom
+    """Main function where the user is prompt with the questions that give us the data needed to print the workout"""
+
     print("Welcome to your personalized workout routine! Allow us to help you by entering the following infomration.\n")
     difficulty = input("What would you say your workout level is at? (Beginner, Intermediate, Advanced)")
     days = input("How many days a week would you prefer to workout? Maximum of 5.")
