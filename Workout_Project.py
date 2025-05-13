@@ -49,18 +49,27 @@ class Workouts: #Carmello
 
     def workout_days(self): #Carmello
         """ Picks the amount of days throughout the week you want to workout and passes it to adding_workout function
+
+
+        Returns the days throughout the week that you'll workout
         """
+
         intervals = len(self.days_of_week) // self.days
         final_days = [self.days_of_week[i * intervals] for i in range(self.days)] #evenly spaces out the workout days throughout the week
         return final_days
 
     def workout_difficulty(self): #Carmello
         """Gets the workout difficulty from the user and passes it to adding_workout function
+
+         Returns: the difficulty in lowercase
+
         """
         return self.difficulty.lower()
 
     def print_workout_schedule(self): #Carmello
-        """Returns the workout schedule generated from the Workout class using f strings"""
+        """Prints the workout schedule generated from the Workout class line by line. This is the main code that will be printed out to the user
+       
+        """
         work_days = self.workout_days()
         work_plan = self.adding_workout()
 
@@ -80,7 +89,14 @@ class Workouts: #Carmello
 
 
 class Workout_Info(): #Zola
-    """Has the information for every part of the workout. Uses the """
+    """
+    Has the information for every part of the workout that will be returned to the main Workout class and printed
+   
+    Args:
+    difficulty (str): the difficulty of the workout (beginner, intermediate, advanced)
+
+    
+    """
     def __init__(self, difficulty): 
         self.difficulty = difficulty
         pass
