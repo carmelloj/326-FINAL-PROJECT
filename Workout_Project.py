@@ -21,7 +21,7 @@ class Workouts: #Carmello
     """
     def __init__(self, focus, days, difficulty): #Carmello
         self.focus = focus.lower()
-        self.days = days
+        self.days = int(days)
         self.difficulty = difficulty.lower()
         self.days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         self.info = Workout_Info(difficulty)
@@ -43,6 +43,8 @@ class Workouts: #Carmello
             return self.info.back()
         elif self.focus == "abs":
             return self.info.abs()
+        elif self.focus == "WARM_UP":
+            return self.info.warm_up()
         else:
             return self.info.balanced()
 
@@ -57,6 +59,8 @@ class Workouts: #Carmello
         intervals = len(self.days_of_week) // self.days
         final_days = [self.days_of_week[i * intervals] for i in range(self.days)] #evenly spaces out the workout days throughout the week
         return final_days
+    
+    
 
     def workout_difficulty(self): #Carmello
         """Gets the workout difficulty from the user and passes it to adding_workout function
@@ -72,6 +76,7 @@ class Workouts: #Carmello
         """
         work_days = self.workout_days()
         work_plan = self.adding_workout()
+        warm_ups = self.info.warm_up()
 
         print(f'\nHere is your workout plan for the next {self.days} days: \n')
 
@@ -79,10 +84,14 @@ class Workouts: #Carmello
             print(f"{day}:")
             if day in work_days:
                 print(f"\nFocus: {self.focus.capitalize()}")
+                print("WARM-UP:")
+                for line in warm_ups:
+                    print(line)
+                print("\nMAIN WORKOUT:")
                 for i, line in enumerate(work_plan):
                     print(f"{line}")
-                    if i == 0:
-                        print("QUICK WATER BREAK (5 MINUTES)")
+                    if i % 2 == 0:
+                        print("QUICK WATER BREAK (2 MINUTES)")
                 print("FINISHED\n")
             else:
                 print("BREAK\n")
@@ -98,34 +107,48 @@ class Workout_Info(): #Zola
     
     """
     def __init__(self, difficulty): 
-        self.difficulty = difficulty
-        pass
+        self.difficulty = difficulty.lower()
+        with open("Workout_Database.txt","r") as f:
+            self.data = f.read()
 
-    def arms(self, difficulty):
+    def arms(self):
         """Using regular expression to find the arms part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("arms")
 
-    def legs(self, difficulty):
+    def legs(self):
         """Using regular expression to find the legs part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("legs")
 
-    def glutes(self, difficulty):
+    def glutes(self):
         """Using regular expression to find the glutes part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("glutes")
 
-    def back(self, difficulty):
+    def back(self):
         """Using regular expression to find the back part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("back")
 
-    def abs(self, difficulty):
+    def abs(self):
         """Using regular expression to find the abs part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("abs")
 
-    def balanced(self, difficulty):
+    def balanced(self):
         """Using regular expression to find the balanced part of the database and returning the information to the workout script"""
-        pass
+        return self.get_workout_data("balanced")
+    
+    def warm_up(self):
+        """Using regular expression to find the balanced part of the database and returning the information to the workout script"""
+        return self.get_workout_data("WARM-UP")
+    
+    def get_workout_data(self,focus_area):
+        #this code assumes that all data is correctly input based on the instructions given in the terminal
+        #print(self.data) <-- makes sure whole data is printing
+        pattern = rf"#\s*{focus_area.lower()}\s*{self.difficulty}\s*\n(.*?)(?=\n#|\Z)"
+        if focus_area == "WARM-UP":
+            pattern = rf"#WARM-UP\n(.*?)(?=\n#|\Z)"
+        match = re.search(pattern, self.data, re.DOTALL|re.IGNORECASE)
+        return match.group(1).strip().split('\n')
 
-    pass
+
 
 def main(): #Edom
     print("Welcome to your personalized workout routine! Allow us to help you by entering the following infomration.\n")
@@ -139,16 +162,22 @@ def main(): #Edom
     workout.workout_difficulty()
     workout.print_workout_schedule()
 
+    #lidia 
+
+    workout_4 = Workouts("arms",4,"Intermediate")
+    days_4 = workout_4.workout_days()
+    expected_4 =  ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+    assert days_4 == expected_4,f"4-day workout: expected{expected_4},got{days_4}"
+
 if __name__ == "__main__": 
     main()
 
- #Unit Tests 
+
+#Unit Tests 
 def test_workouts():
  # 3 days, arms workout, and intermediate workout
     workout = Workouts("arms", 3, "Intermediate")
     days = workout.workout_days()
     expected_days = ['Monday', 'Thursday', 'Sunday']
     assert days == expected_days, f"Expected{expected_days}, but got {days}"
-
-
 
