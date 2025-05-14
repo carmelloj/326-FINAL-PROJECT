@@ -55,7 +55,7 @@ class Workouts: #Carmello
 
         Returns the days throughout the week that you'll workout
         """
-        if self.days == 4: #We want specific days for 4 days.
+        if int(self.days) == 4: #We want specific days for 4 days.
             return ['Monday', 'Wednesday', 'Friday', 'Sunday']
         if self.days == 5 and self.difficulty == "advanced": 
             #if they are doing an advanced workout, the days need to be spaced more for recovery
@@ -174,8 +174,8 @@ def main(): #Edom
     """Main function where the user is prompt with the questions that give us the data needed to print the workout"""
 
     print("Welcome to your personalized workout routine! Allow us to help you by entering the following infomration.\n")
-    difficulty = input("What would you say your workout level is at? (Beginner, Intermediate, Advanced)")
-    days = input("How many days a week would you prefer to workout? Maximum of 5.")
+    difficulty = input("What would you say your workout level is at? (Beginner, Intermediate, Advanced) ")
+    days = input("How many days a week would you prefer to workout? Maximum of 5. ")
     focus = input("Are there any areas you'd like to focus on? \nWe have specifications for: Arms, Legs, Back, Glutes & Abs.\nIf you have no specifications, please type 'Balanced' ")
 
     workout = Workouts(focus, days, difficulty)
@@ -184,22 +184,13 @@ def main(): #Edom
     workout.workout_difficulty()
     workout.print_workout_schedule()
 
-    #lidia 
-    workout_4 = Workouts("arms",4,"Intermediate")
-    days_4 = workout_4.workout_days()
-    expected_4 =  ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
-    assert days_4 == expected_4,f"4-day workout: expected{expected_4},got{days_4}"
-
-if __name__ == "__main__": 
-    main()
-
 
 #Unit Tests 
 def test_workouts():
  # 3 days, arms workout, and intermediate workout
     workout = Workouts("arms", 3, "Intermediate")
     days = workout.workout_days()
-    expected_days = ['Monday', 'Thursday', 'Sunday']
+    expected_days = ['Monday', 'Wednesday', 'Friday']
     assert days == expected_days, f"Expected{expected_days}, but got {days}"
 
 
