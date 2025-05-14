@@ -55,6 +55,11 @@ class Workouts: #Carmello
 
         Returns the days throughout the week that you'll workout
         """
+        if self.days == 4: #We want specific days for 4 days.
+            return ['Monday', 'Wednesday', 'Friday', 'Sunday']
+        if self.days == 5 and self.difficulty == "advanced": 
+            #if they are doing an advanced workout, the days need to be spaced more for recovery
+            return ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Sunday']
 
         intervals = len(self.days_of_week) // self.days
         final_days = [self.days_of_week[i * intervals] for i in range(self.days)] #evenly spaces out the workout days throughout the week
@@ -201,7 +206,7 @@ def test_workouts():
     #Testing 4 days, abs workout, and beginner
     workout_4 = Workouts("abs",4,"beginner")
     days_4 = workout_4.workout_days()
-    expected_4 =  ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+    expected_4 =  ['Monday', 'Wednesday', 'Friday', 'Sunday']
     assert days_4 == expected_4,f"4-day workout: expected{expected_4},got{days_4}"
 
 
