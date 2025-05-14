@@ -133,7 +133,6 @@ def main(): #Edom
     workout.print_workout_schedule()
 
     #lidia 
-
     workout_4 = Workouts("arms",4,"Intermediate")
     days_4 = workout_4.workout_days()
     expected_4 =  ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
@@ -150,5 +149,22 @@ def test_workouts():
     expected_days = ['Monday', 'Thursday', 'Sunday']
     assert days == expected_days, f"Expected{expected_days}, but got {days}"
 
+
+    workout_4 = Workouts("abs",4,"beginner")
+    days_4 = workout_4.workout_days()
+    expected_4 = ['Monday', 'Tuesday, 'Wednesday', Thursday']
+    assert days_4 == expected_4,f"4-day workout: expected{expected_4},got{days_4}"
+
+
+    #Testing different wording to make sure caps doesn't affect the result
+    workout_wording = Workouts("Legs", 3, "AdVanCed")
+    difficulty = workout_wording.workout_difficulty()
+    expected_diff = "advanced"
+    assert difficulty == expected_diff, f"Expected difficulty '{expected_diff}', but got '{difficulty}'"
+
+
+if __name__ == "__main__":
+    main()
+    test_workouts()
 
 
