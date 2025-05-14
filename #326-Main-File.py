@@ -62,16 +62,20 @@ class Workouts:
 
     def workout_days(self): 
         """ Picks the amount of days throughout the week you want to workout and passes it to adding_workout function
+
+        Returns the days throughout the week that you'll workout
         """
         pass
 
     def workout_difficulty(self):
         """Gets the workout difficulty from the user and passes it to adding_workout function
+
+        Returns: The difficulty in lowercase
         """
         pass
 
     def print_workout_schedule(self): 
-        """Returns the workout schedule generated from the Workout class using f strings"""
+        """Prints the workout schedule generated from the Workout class line by line. This is the main code that will be printed by the user"""
         workouts = []
         #BASED OFF THE REQUEST FROM
         if self.days >= 1:
@@ -90,7 +94,10 @@ class Workouts:
         pass
 
 class Workout_Info():
-    """ This has the + information for every part of the workout"""
+    """ Has the information for every part of the workout that will be returned to the main Workout clas and printed 
+         
+        Args:
+        difficulty (str): the difficulty of the workoout (beginner, intermediate, advacned)"""
     def __init__(self,difficulty):
         self.difficulty = difficulty
         pass
