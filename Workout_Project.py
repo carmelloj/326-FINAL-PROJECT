@@ -207,6 +207,12 @@ def test_workouts():
     expected_diff = "advanced"
     assert difficulty == expected_diff, f"Expected difficulty '{expected_diff}', but got '{difficulty}'"
 
+    #Testing balanced, 2 day, advanced
+    workout_2 = Workouts("Balanced", 2, "ADVANCED")
+    days_2 = workout_2.workout_days()
+    expected_2 = ['Monday', 'Thursday']
+    assert days_2 == expected_2, f"2-day workout: expected {expected_2}, but got {days_2}"
+
 
 if __name__ == "__main__":
     main()
